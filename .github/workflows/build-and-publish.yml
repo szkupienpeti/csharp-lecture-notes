@@ -29,11 +29,17 @@ jobs:
           working_directory: src
           root_file: csharp-lecture-notes.tex
           
-#      - name: Move pdf to root
-#        run: |
-#          pwd
-#          mv src/csharp-lecture-notes.pdf ..
-#          ls
+      - name: Move pdf to root
+        run: |
+          pwd
+          cd src
+          pwd
+          ls
+          mv csharp-lecture-notes.pdf ../
+          ls
+          cd ..
+          pwd
+          ls
           
 
       - name: Commit and Push new file
