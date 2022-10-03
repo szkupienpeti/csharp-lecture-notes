@@ -17,6 +17,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Set up Git repository
         uses: actions/checkout@v3
+        
+      - name: Go to src folder
+        run: cd src
 
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
@@ -24,8 +27,8 @@ jobs:
           root_file: src/csharp-lecture-notes.tex
       - name: Commit and Push new file
         run: |
-          git config user.name szkupienpeti
-          git config user.email <email>
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add .
           git commit -m "Add PDF file"
           git push
