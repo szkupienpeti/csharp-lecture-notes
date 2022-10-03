@@ -31,7 +31,7 @@ jobs:
           
       - name: Move pdf to root
         run: |
-          mv csharp-lecture-notes.pdf ..
+          mv src/csharp-lecture-notes.pdf ..
           
 
       - name: Commit and Push new file
