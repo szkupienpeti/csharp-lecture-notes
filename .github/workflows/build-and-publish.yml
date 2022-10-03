@@ -21,7 +21,8 @@ jobs:
       - name: Configure Git credentials
         uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
-          token: '${{ secrets.GITHUB_TOKEN }}'
+          #token: '${{ secrets.GITHUB_TOKEN }}'
+          token: '${{ secrets.pat }}'
         
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
@@ -31,21 +32,11 @@ jobs:
           
       - name: Move pdf to root
         run: |
-          pwd
           cd src
-          pwd
-          ls
           mv csharp-lecture-notes.pdf ../
-          ls
-          cd ..
-          pwd
-          ls
-          
 
       - name: Commit and Push new file
         run: |
-          pwd
-          ls
           git add csharp-lecture-notes.pdf
           git commit -m "Add PDF file"
           git push
