@@ -1,4 +1,4 @@
-name: CI
+name: Build and publish LaTeX document
 
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -19,12 +19,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Compile LaTeX document
-        uses: dante-ev/latex-action@latest
+        uses: xu-cheng/latex-action@v2
         with:
           root_file: src/csharp-lecture-notes.tex
-      
-      - name: Upload compiled pdf
-        uses: actions/upload-artifact@v3
-        with:
-          name: csharp-lecture-notes.pdf
-          path: csharp-lecture-notes.pdf
+      - name: Commit and Push new file
+        run: |
+          git config user.name szkupienpeti
+          git config user.email <email>
+          git add .
+          git commit -m "Add PDF file"
+          git push
