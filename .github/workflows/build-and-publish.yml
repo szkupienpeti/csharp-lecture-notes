@@ -21,7 +21,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: src/csharp-lecture-notes.tex
+          root_file: csharp-lecture-notes.tex
           working_directory: src
 
       - name: Commit and Push new file
