@@ -29,17 +29,17 @@ jobs:
           working_directory: src
           root_file: csharp-lecture-notes.tex
           
-      - name: Move pdf to root
-        run: |
-          pwd
-          mv src/csharp-lecture-notes.pdf ..
-          ls
+#      - name: Move pdf to root
+#        run: |
+#          pwd
+#          mv src/csharp-lecture-notes.pdf ..
+#          ls
           
 
       - name: Commit and Push new file
         run: |
           pwd
           ls
-          git add ../csharp-lecture-notes.pdf
+          git add csharp-lecture-notes.pdf
           git commit -m "Add PDF file"
           git push
