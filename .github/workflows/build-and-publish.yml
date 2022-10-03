@@ -24,6 +24,7 @@ jobs:
           root_file: src/csharp-lecture-notes.tex
       
       - name: Upload compiled pdf
+        uses: actions/upload-artifact@v3
         with:
           name: csharp-lecture-notes.pdf
           path: csharp-lecture-notes.pdf
